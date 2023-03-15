@@ -1,7 +1,7 @@
 function showTabuada(number){
     console.log('Tabuada dos', number)
     for (let i = 0; i <= 10; i++){
-       console.log(i, 'x', number, ` = ${ Number(i) * Number(number)}`)
+       console.log(` ${ '1 x ' +  i + ' = ' +  Number(i) * Number(number)}`)
     }
 };
 showTabuada(7);
