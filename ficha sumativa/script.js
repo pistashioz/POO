@@ -34,9 +34,7 @@ function renderTable(txtName, txtCategory, txtQuantity){
         <td align = center>${txtName}</td>
         <td align = center>${txtCategory}</td>
         <td align = center>${txtQuantity}</td>
-    </tr>`;
-
-    tableBody.innerHTML = table;
+        </tr>`;
 }
 
 renderTable(txtName, txtCategory, txtQuantity);
@@ -63,7 +61,7 @@ document.querySelector('#nTotal').addEventListener('click', function(event){
 document.querySelector('#clear').addEventListener('click', function(event){
     if (confirm('deseja mesmo apagar?')){
         produtos = []
-        renderTable()
+        renderTable();
     }
 });
 
