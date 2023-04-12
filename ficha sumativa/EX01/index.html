@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id= 'addForm'>
+        NOME: <input type='text' id='addProduct' required> <br>
+        CATEGORIA:<select id = 'addCategory' required>
+            <option value = 'fruta'>FRUTA</option>
+            <option value = 'legumes'>LEGUMES</option>
+            <option value = 'carne'>CARNE</option>
+            <option value = 'peixe'>PEIXE</option>
+            <option value = 'bebida'>BEBIDA</option>
+            <option value = 'outros'>OUTROS</option>
+        </select>
+        <button id = 'newCategory'>NOVA CATEGORIA</button><br>
+        QUANTIDADE<input type="number" min="1" max="1000"id="addQuantity" required><br>
+        <input type = 'submit' value="ADICIONAR">
+    </form>
+    <br><br>
+    <table border="1" align="center">
+        <thead>
+            <th>NOME</th>
+            <th>CATEGORIA</th>
+            <th>QUANTIDADE</th>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table> <br><br>
+
+    <button id = 'nProducts'>N° PRODUTOS</button>
+    <button id = 'productsByCategory'>PRODUTOS POR CATEGORIA</button>
+    <button id = 'nTotal'>QUANTIDADE TOTAL</button>
+    <button id = 'clear'>LIMPAR LISTA</button>
+
+
+
+
+
+    <script src = 'script.js'></script>
+</body>
+</html>
