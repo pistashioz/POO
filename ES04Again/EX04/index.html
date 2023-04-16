@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for = 'userName'>Nome</label>
+        <input type = 'text' name = 'userName' id = 'userName' required>
+
+        <label for = 'course'>Curso</label> <br>
+        <input type="radio" id="TSIW" name="course" value="TSIW">
+        <label for="TSIW">TSIW</label><br>
+        <input type="radio" id="multimedia" name="course" value="multimedia">
+        <label for="multimedia">Multimedia</label><br>
+        <input type="radio" id="design" name="course" value="design">
+        <label for="design">Design</label>
+        <input type="radio" id="fotografia" name="course" value="fotografia">
+        <label for="fotografia">Fotografia</label>
+
+        <label for = 'profile'>Perfil</label>
+        <select name = 'profile' id = 'profile' required>
+            <option value = 'student'>Estudante</option>
+            <option value = 'professor'>Docente</option>
+            <option value = 'employee'>Funcionario</option>
+            <option value = 'other'>Outro</option>
+        </select>
+        <fieldset>
+            <legend>Session</legend>
+            <div>
+              <input type="checkbox" id="morningSession" name="morningSession" class="sessionCheckbox">
+              <label for="morning">Morning</label>
+            </div>
+            <div>
+              <input type="checkbox" id="afternoonSession" name="morningSession" class="sessionCheckbox">
+              <label for="afternoon">Afternoon</label>
+            </div>
+          </fieldset>
+          <input type = 'submit' value = 'Adicionar'>
+          <input type = 'button' value = 'Contar'>
+    </form>
+    <div>
+        <table border = '1'>
+          <tr>
+            <th>Nome</th>
+            <th>Curso</th>
+            <th>Perfil</th>
+            <th>Sessao</th>
+          </tr>
+        </table>
+      </div> 
+    <script src = 'script.js'></script>
+</body>
+</html>

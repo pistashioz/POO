@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for = 'gameName'>Nome do jogo</label>
+        <input name = 'gameName' id = 'gameName' required>
+        <label for = 'gameYear'>Ano</label>
+        <input name = 'gameYear' id = 'gameYear' type="number" required>
+        <label for = 'genre'>Genero</label>
+        <select name = 'genre' id = 'genre' required>
+            <option value = 'action'>Acao</option>
+            <option value = 'adventure'>Aventura</option>
+            <option value = 'strategy'>Estratégia</option>
+            <option value = 'sports'>Desporto</option>
+            <option value = 'simulation'>Simulacao</option>
+        </select>
+        <label for="urlGameCover">Cover</label>
+        <input name="urlGameCover" id="urlGameCover" type="url">
+
+        <input type="submit" id = 'btnAdd'value="Add">
+        <input type="reset" value="Reset">
+    </form>
+    <hr>
+    <div>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Year</th>
+          <th>Genre</th>
+          <th>Cover</th>
+          <th>Options</th>
+        </tr>
+      </table>
+    </div> 
+    <script src = 'script.js'></script>
+</body>
+</html>
