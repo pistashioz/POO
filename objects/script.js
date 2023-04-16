@@ -16,7 +16,7 @@ function addEmployees(){
     const employeeDepart = prompt('add your department: ');
     let employee = {
         name: employeeName,
-        salary: employeeSalary,
+        salary: +employeeSalary,
         depart: employeeDepart,
         segSocial: function(){
             return this.employeeSalary * 0.11;
@@ -32,14 +32,17 @@ function existEmployee(newName){
 
 function showEmployees(){
     for (let employee in employees){
-        alert(`Name: ${employee.employeeName}, \nsalary: ${employee.employeeSalary}, \ndepartment: ${employee.employeeDepart}, \nSeg Social: ${employee.segSocial} `)
+        alert(`Name: ${employee.name}, \nsalary: ${employee.salary}, \ndepartment: ${employee.depart}, \nSeg Social: ${employee.segSocial} `)
     }
 }
 
 function totalSalaries(){
-    let totalSalaries=0;
+    let totalSalary=0;
     for (let employee in employees){
-        totalSalaries+=employee.salary;
+        totalSalary+= +employee.salary;
     }
-    return totalSalaries;
+    console.log(totalSalary)
+    return alert(totalSalary);
 }
+
+totalSalaries()
