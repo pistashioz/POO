@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Add</legend>
+        <form id = 'addForm'>
+            <label for = 'title'>Film Title</label>
+            <input type = 'text' name = 'title' id = 'title' required>
+
+            <label for = 'genre'>Genre</label>
+            <select id = 'genre' name = 'genre' required>
+                <option value = 'adventure'>Adventure</option>
+                <option value = 'action'>Action</option>
+                <option value = 'horror'>Horror</option>
+                <option value = 'romance'>Romance</option>
+                <option value = 'thriller'>Thriller</option>
+                <option value = 'Other'>Other</option>
+            </select>
+            <label for = 'year'>Year</label>
+            <input type = 'number' name = 'year' id = 'year' min = '1900' max = '2023' required>
+
+            <label for = 'cover'>Cover</label>
+            <input type = 'url' name = 'cover' id = 'cover'>
+
+            <label for = 'trailer'>Trailer</label>
+            <input type = 'url' name = 'trailer' id = 'trailer'>
+
+
+            <input type = 'submit' value = 'add' id = 'add'>
+            <input type="reset" value="reset" id = 'reset'>
+        </form>
+    </fieldset>
+
+
+    <table border = '1'>
+        <thead>
+            <th>Ttle</th>
+            <th>Genre</th>
+            <th>Options</th>
+        </thead>
+        <tbody id = 'tableBody'></tbody>
+    </table>
+
+    <dialog id="dialogTrailer">
+        <iframe width="420" height="315" src=""></iframe>
+      </dialog>
+    
+      <dialog id="dialogCover">
+        <img src="" alt="">
+      </dialog>
+    <script src = 'script.js'></script>
+</body>
+</html>
