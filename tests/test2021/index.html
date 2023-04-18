@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteStore</title>
+</head>
+<body>
+    <form>
+        <label for = 'client'>Client Name:</label>
+        <input name = 'client' id = 'client' required>
+
+        <label for = 'product'>Product: </label>
+        <select name = 'product' id = 'product'>
+            <option value = '900'>Desktop</option>
+            <option value = '700'>Laptop</option>
+            <option value = '400'>Monitor</option>
+            <option value = '100'>Keyboard</option>
+            <option value = '20'>Mouse</option>
+            <option value = '50'>Printer</option>
+            <option value = '80'>External Disk</option>
+            <option value = '1500'>Solar Panel</option>
+        </select>
+
+        <label for = 'amount'>Amount</label>
+        <input type = 'number' name = 'amount' id = 'amount' required>
+
+        <label for = 'iva'>IVA :</label>
+        <input type = 'radio' id = '13' name = 'iva' value = '13' required>
+        <label for = '13'>13%</label> 
+        <input type = 'radio' id = '23' name = 'iva' value = '23'>
+        <label for = '23'>23%</label> 
+        <input type = 'radio' id = '-23' name = 'iva' value = '-23'>
+        <label for = '-23'>-23%</label>
+
+        <input type ='submit' value = 'submit'>
+    </form>
+    <fieldset>
+        <legend>BILL</legend>
+        <table border = '1'>
+            <thead>
+                <th>PRODUCT</th>
+                <th>QNT</th>
+                <th>UP</th>
+                <th>IVA</th>
+                <th>SUBTOTAL</th>
+            </thead>
+            <tbody id = 'tableBody'></tbody>
+        </table>
+    </fieldset>
+    <button id = 'buy'>BUY</button>
+    <button id = 'addCart'>Add to Cart</button>
+
+    <script src = 'script.js'></script>
+</body>
+</html>
