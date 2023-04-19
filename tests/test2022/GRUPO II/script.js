@@ -12,7 +12,7 @@ function createTable(){
     let template = ''
     for (let colaborador of colaboradores){
         template +=  `<tr><td value = ${colaborador}>${colaborador}</td>
-        <td><button class = 'btn' onclick="tipoMovimento()')">ENTRAR</button></td>
+        <td><button id = 'btn' onclick="tipoMovimento()')">ENTRAR</button></td>
         </tr> `
     }
     tableBody.innerHTML = template;
@@ -28,15 +28,10 @@ formAdd.addEventListener('submit', function(){
 })
 
 function tipoMovimento(){
-    const btn = document.getElementsByClass("btn");
-    btn.addEventListener("click", ()=>{
-
-        if(btn.value === "SAIR"){
-            btn.value = "ENTRAR";
-            return true
-        }else{
-            btn.value= "SAIR";
-            return false
-        }
-    })
+    const btn = document.getElemensById("btn");
+    btn.addEventListener("click",function(){
+        btn.textContent = 'SAIR'
+    });
 }
+
+tipoMovimento()
