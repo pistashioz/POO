@@ -19,7 +19,6 @@ function createTable(){
 createTable()
 
 add.addEventListener('submit', function(event){
-    console.log('?')
     event.preventDefault()
 
     const productValue = document.getElementById('product');
