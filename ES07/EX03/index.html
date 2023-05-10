@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Movies Manager</h1>
+    <fieldset>
+        <legend>Add Movie</legend>
+        <label for = 'title'>Title</label>
+        <input type = 'text' name = 'title' id = 'title' required>
+
+        <label for = 'year'>Year</label>
+        <input type = 'number' name = 'year' id = 'year' min = '1900' max = '2023' required>
+
+        <label for = 'director'>director</label>
+        <select id = 'director' name = 'director' required>
+            <option value = 'Wes Anderson'>Wes Anderson</option>
+            <option value = 'Tim Burton'>Tim Burton</option>
+            <option value = 'Quentin Tarantino'>Quentin Tarantino</option>
+        </select>
+        <label for = 'duration'>Duration (in minutes)</label>
+        <input type = 'number' name = 'duration' id = 'duration' required>
+
+        <label for = 'actors'>Actors (separated by commas)</label>
+        <input type = 'text' name = 'actors' id = 'actors' required>
+
+        <button id = 'createMovie'>Create Movie</button>
+    </fieldset>
+    <fieldset>
+        <legend>Create Director</legend>
+        <label for = 'diretorName'>Name</label>
+        <input type = 'text' id = 'directorName' name = 'directorName' required>
+
+        <label for = 'birthday'>Date of Birth</label>
+        <input type = 'date' id = 'birthday' name = 'birthday' required>
+
+        <label for = 'country'>Country</label>
+        <input type = 'text' id = 'country' name = 'country' required>
+        <button id = 'createDirector'>Create Director</button>
+    </fieldset>
+    <fieldset>
+        <legend>Functions</legend>
+        <button id = 'byDirector'>All Films By Director:</button>
+        <input type = 'text' id = 'directorWanted'> <br>
+        <button id = 'withActor'>All Films With Actor:</button>
+        <input type = 'text' id = 'actorWanted'>
+    </fieldset>
+
+    <table border = '1'>
+        <thead>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Actors</th>
+            <th>Year</th>
+            <th>Duration</th>
+        </thead>
+        <tbody id = 'tableBody'></tbody>
+    </table>
+
+    <script src = 'script.js'></script> 
+</body>
+</html>

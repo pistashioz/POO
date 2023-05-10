@@ -1,22 +1,20 @@
 class Dice {
-    #faceValue = 0
-    #quantity = 6
-    constructor(faceValue, quantity){
-        this.#faceValue = faceValue
-        this.#quantity = 6
+    #faceValue = [];
+    #quantity = 0;
+    constructor(){
+        this.#faceValue = [1, 2, 3, 4, 5, 6];
+        this.#quantity = 6;
     }
     get getQuantityFaces() {
         return this.#faceValue;
     }
+    //methods
+    getQuantityFaces(value){
+        return this.#quantity = value;
+    }
+    roll(){
+        const random = Math.floor(Math.random() * this.#quantity);
+        return this.#faceValue[random];
+    }
 }
 
-const face1 = new Dice(1);
-const face2 = new Dice(2);
-const face3 = new Dice(3);
-const face4 = new Dice(4);
-const face5 = new Dice(5);
-const face6 = new Dice(6);
-
-console.log(diceValues.faceValue)
-
-set 
