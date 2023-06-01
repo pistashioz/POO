@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<body>
+    
+    <form id = 'movieForm'>
+        <label for = 'movie'>Movie title: </label>
+        <input type = 'text' name = 'movie' id = 'movieTitle'>
+
+        <label for = 'yearReleased'>Year of release: </label>
+        <input type = 'number' name = 'yearReleased' id = 'yearReleased'>
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Director</button>
+
+        <label for = 'duration'>Duration (in minutes): </label>
+        <input type = 'text' name = 'duration' id = 'duration'>
+
+        <label for = 'actors'>Actors: </label>
+        <input type = 'text' id = 'actors' name = 'actors'>
+
+        <input type="submit" id = 'btnAdd'value="Add">
+    </form>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-bs-backdrop="static">
+    <div class="modal-dialog  modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Director</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <label for = 'director'>Director: </label>
+                <input type = 'text' name = 'director' id = 'director'>
+
+                <label for = 'birthday'>Date of birth: </label>
+                <input type = 'date' id = 'birthday' name = 'birthday'>
+
+                <label for = 'country'>Country: </label>
+                <input type = 'text' id = 'country' id = 'country'>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" name="save-details" id="save" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class= 'tbale-responsive'>
+    <table class="table table-striped">
+      <tr>
+        <th>Movie</th>
+        <th>Director</th>
+        <th>Released year</th>
+        <th>Duration (in minutes)</th>
+      </tr>
+    </table>
+  </div>
+  
+<!-- Functions UI -->
+  <label for = 'directorAllFilms'>All films given by: </label>
+  <input type = 'text' id = 'directorAllFilms' name = 'directorAllFilms'>
+  <ul id = 'here'></ul>
+  <input type="submit" id = 'directorBtn' value="Search">
+
+  <label for = 'titleActress'>All film titles where this actor/actress appears: </label>
+  <input type = 'text' id = 'titleActress' name = 'titleActress'>
+  <ul id = 'hereA'></ul>
+  <input type="submit" id = 'actressBtn'value="Search">
+
+  <label for = 'countryAllFilms'>All films made by directors from: </label>
+  <input type = 'text' id = 'countryAllFilms' name = 'countryAllFilms'>
+  <ul id = 'hereC'></ul>
+  <input type="submit" id = 'countryBtn'value="Search">
+
+  <label for = 'mostFilms'>Name of director with the most films: </label>
+  <p id = 'mostFilms'></p>
+  <input type="submit" id = 'mostFilmsBtn'value="Search">
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src = 'script.js'></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+</body>
+</html>
