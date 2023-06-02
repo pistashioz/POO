@@ -56,9 +56,9 @@ function f3(){
     parceiras.filter(function(parceira){
         numProjects.push(parceira.nomesProjetos.length)
     });
-    console.log(numProjects)
-    const max = numProjects.reduce((a, b) => Math.max(a, b), -Infinity);
-    console.log(max)
+    const max = Math.max(...numProjects);
+    const index = numProjects.indexOf(max)
+    alert(parceiras[index].empresa)
 }
 function f4(){
     const curso = prompt('indique o curso: ');
