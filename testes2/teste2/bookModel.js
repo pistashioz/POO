@@ -52,13 +52,18 @@ export class Book {
     }
 
     set actualPage(actualPage){
-        if (actualPage > this.nPages){
-            console.log('invalid page!')
+        try {
+            if (actualPage > this.nPages || actualPage < 0) {
+              throw Error("Valor da página atual inválido!");
+             }
+             else
+             {
+              this.actualPage = actualPage;
+             }
         }
-        else{
-            this.actualPage = actualPage
+        catch(error) {
+          alert(`${error}`) }
         }
-    }
 
     forward(){
         this.actualPage = this.actualPage + 1
@@ -73,7 +78,7 @@ export class Book {
                 this.actualPage = this.actualPage + numOfPages
             }
             else{
-                console.log('invalid')
+                throw Error("Begin Book!");
             }
 
         }
@@ -82,11 +87,11 @@ export class Book {
                 this.actualPage = this.actualPage - numOfPages
             }
             else{
-                console.log('invalid')
+                throw Error("Book Dned!");
             }
         }
         else{
-            console.log('invalid')
+            throw Error("Book Dned!");
         }
     }
 
