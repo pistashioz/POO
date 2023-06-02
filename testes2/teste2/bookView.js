@@ -108,8 +108,7 @@ function renderTable(){
             const linha = this.parentNode.parentNode;
             linha.querySelector('#notReaded').innerHTML = `${pagesNotReaded - 1}m`;
             linha.querySelector('#timeLeft').innerHTML = `${timeLeft - 5}m`;
-
-            table.querySelector('#leftHours').innerHTML = `Tempo em horas restante: ${hours - 0.0833333}h`
+            table.querySelector('#leftHours').innerHTML = `Tempo em horas restante: ${hours - 0.08}h`
         });
     }
 

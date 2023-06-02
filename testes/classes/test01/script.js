@@ -35,9 +35,8 @@ class developer {
 //getters => access properties
 //setters => change (mutate) them
 const yoyi = new developer('yoyi', 19, 'blue');
-console.log(yoyi.color)
+console.log(yoyi)
 console.log(yoyi._color)
-console.log(yoyi.age)
 console.log(yoyi.log)
 
 developer.fullInfo = 'victoria 20 blue'
