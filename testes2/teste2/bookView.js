@@ -1,7 +1,7 @@
 import {Book} from "./bookModel.js"
 
 
-const book1 = new Book('Os dias sem sorte', 'Romance', ['João Pais'], 233, 201);
+const book1 = new Book('Os dias sem sorte', 'Romance', ['João Pais'], 233 , 201);
 const book2 = new Book('Amor limite', 'Romance', ['Maria Augusta',  'António Coimbra'], 513, 333);
 const book3 = new Book('Raios', 'Aventura', ['Carlos Roma'], 232)
 let books = [book1, book2, book3]
@@ -51,18 +51,21 @@ function f4(){
 
 function f5(bookChosen){
     const authorsName = prompt('write authors name');
-    books.filter(function(book){
-        if (book.title == bookChosen){
-            if (!book.authors.includes(authorsName)){
-                book.authors.push(authorsName)
+    try{
+        const book = books.find((book) => book.title === bookChosen);
+         
+         if (book.authors.includes(authorsName)){
+            throw Error('This author already exist!')
+         }
+         else{
+            book.authors.push(authorsName)
+            alert('author was added')
+         }
+    }
+    catch (error) {
+        alert(error)
+    }
 
-            }
-            else{
-                alert('existant author')
-            }
-            alert(book.authors)    
-        }
-    })
 }
 const f1Btn = document.querySelector('#F1');
 f1Btn.addEventListener('click', f1)
@@ -83,36 +86,48 @@ f5Btn.addEventListener('click', function(){
 });
 
 
-
-function renderTable(){
-    const table = document.querySelector('tbody');
-    const leftHours = document.createElement('tr')
-    for (let book of books){    
-        const line = document.createElement('tr');
-        const pagesNotReaded = book.nPages - book.actualPage
-        const timeLeft = pagesNotReaded * 5
-        line.innerHTML = `
-        <td id = 'book'>${book.title}</td>
-        <td id = 'notReaded'>${pagesNotReaded}</td>
-        <td><input type="button" value="FORWARD"></td>
-        <td id = 'timeLeft'>${timeLeft}m</td>
-        `;
-        table.append(line);
-
-        const hours = parseInt(timeLeft / 60)
-        leftHours.innerHTML = `<td colspan = 4 id = 'leftHours'>Tempo em horas restante: ${hours}h</td>`
-        table.append(leftHours);
-
-        const button = line.getElementsByTagName('input')[0];
-        button.addEventListener('click', function () {
-            const linha = this.parentNode.parentNode;
-            linha.querySelector('#notReaded').innerHTML = `${pagesNotReaded - 1}m`;
-            linha.querySelector('#timeLeft').innerHTML = `${timeLeft - 5}m`;
-            table.querySelector('#leftHours').innerHTML = `Tempo em horas restante: ${hours - 0.08}h`
-        });
+function renderTable() {
+    const table = document.querySelector("table");
+    let result = "";
+    let total = 0;
+    result = `
+      <tr>
+        <th>TÍTULO</th>
+        <th>Nº PÁGINAS NÃO LIDAS</th>
+        <th>AÇÃO A EXECUTAR</th>
+        <th>TEMPO RESTANTE</th>
+      </tr>
+    `;
+    for (const book of books) {
+      result += `
+        <tr>
+          <td>${book.title}</td>
+          <td style="text-align: center">${book.nPages - book.actualPage}</td>
+          <td><button class='forward' id='${book.title}'>AVANÇAR</button></td>
+          <td>${(book.nPages - book.actualPage) * 5}m</td>
+        </tr>
+      `;
+      total += (book.nPages - book.actualPage) * 5;
     }
+    result += `<tr><td colspan="4" style="text-align: right">Tempo em horas: ${Math.ceil(total/60)
+    }h</td></tr>`;
+    table.innerHTML = result;
+  
+    // ADICIONAR LISTENER AO BOTÃO AVANÇAR
+    const buttons = table.querySelectorAll(".forward");
+    for (const button of buttons) {
+      button.addEventListener("click", (event) => {
+        const book = books.find((book) => book.title === event.target.id);
+        try {
+          book.forward();
+        } catch (error) {
+          alert(error);
+        }
+        renderTable();
+      });
+    }
+  
+  
+  }
 
-}
-
-
-window.addEventListener('load', renderTable)
+  renderTable()

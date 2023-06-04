@@ -1,9 +1,9 @@
 export class Book {
-    title = '';
-    genre = '';
-    authors = [];
-    nPages = 0;
-    actualPage = 0;
+    title;
+    genre;
+    authors;
+    nPages;
+    actualPage;
 
     constructor(title, genre, authors, nPages, actualPage = 0){
         this.title = title
